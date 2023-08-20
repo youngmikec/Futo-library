@@ -25,7 +25,7 @@ import BookDetailComp from './book-detail';
 
 const BooksComp = () => {
     const dispatch = useDispatch();
-    const Books: Book[] = useSelector((state: RootState) => state.bookState.value);
+    const Books: Book[] = useSelector((state: RootState) => state.booksState.value);
 
     const [deleting, setDeleting] = useState<boolean>(false);
     const [searching, setSearching] = useState<boolean>(false);
@@ -233,7 +233,7 @@ const BooksComp = () => {
                                                                     openModal('update');
                                                                 }}
                                                             >
-                                                                Update Giftcard
+                                                                Update Book
                                                             </span>
                                                         </li>
 
@@ -245,7 +245,7 @@ const BooksComp = () => {
                                                                 openModal('delete')
                                                                 }}
                                                             >
-                                                                Delete Giftcard
+                                                                Delete Book
                                                             </span>
                                                         </li>
                                                     </ul>
@@ -254,7 +254,7 @@ const BooksComp = () => {
                                             </tr>
                                         }) : 
                                             <tr>
-                                                <td colSpan={7} className="text-center py-3">No Crypto Record available</td>
+                                                <td colSpan={7} className="text-center py-3">No Book available</td>
                                             </tr>
                                     }
                                     

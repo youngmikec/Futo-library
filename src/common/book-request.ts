@@ -3,6 +3,7 @@ import { User } from "./user"
 
 export type BookRequest = {
     id: string;
+    _id: string;
     code: string;
     bookId: Book;
     borrowerId: User;

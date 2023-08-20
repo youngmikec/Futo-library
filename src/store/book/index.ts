@@ -6,8 +6,8 @@ const initialState: BookState = {
     value: [],
 }
 
-export const giftcardSlice = createSlice({
-    name: "giftcardsState",
+export const bookSlice = createSlice({
+    name: "booksState",
     initialState,
     reducers: {
         INITIALIZE_BOOKS: (state, action: PayloadAction<Book[]>) => {
@@ -32,6 +32,6 @@ export const giftcardSlice = createSlice({
     }
 })
 
-export const { INITIALIZE_BOOKS, ADD_TO_BOOkS, UPDATE_BOOk_STATE, REMOVE_BOOk } = giftcardSlice.actions;
+export const { INITIALIZE_BOOKS, ADD_TO_BOOkS, UPDATE_BOOk_STATE, REMOVE_BOOk } = bookSlice.actions;
 
-export default giftcardSlice.reducer;
+export default bookSlice.reducer;

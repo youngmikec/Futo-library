@@ -14,16 +14,14 @@ const BookForm = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState<boolean>(false);
 
-    const [giftcardImage, setGiftcardImage] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [barcode, setBarcode] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [name, setName] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [type, setType] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [rate, setRate] = useState<{value: number, error: boolean }>({value: 0, error: false});
-    const [walletAddress, setWalletAddress] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [bankName, setBankName] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [accountName, setAccountName] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [accountNumber, setAccountNumber] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [exchangePlatform, setExchangePlatform] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [bookImg, setBookImg] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [bookName, setBookName] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [language, setLanguage] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [author, setAuthor] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [publisher, setPublisher] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [bookCountAvailable, setBookCountAvailable] = useState<{value: number, error: boolean }>({value: 0, error: false});
+    const [bookStatus, setBookStatus] = useState<{value: string, error: boolean }>({value: 'AVAILABLE', error: false});
+    const [categories, setCategories] = useState<{value: string[], error: boolean }>({value: [], error: false});
 
     const fileRef = useRef<HTMLInputElement>(null);
 
@@ -34,13 +32,9 @@ const BookForm = () => {
     const handleFileRead = async (event: any) => {
         const file = event.target.files[0];
         const base64: any = await convertBase64(file);
-        setGiftcardImage({...giftcardImage, value: base64});
+        setBookImg({...bookImg, value: base64});
     }
-    const handleBarcodeFileRead = async (event: any) => {
-        const file = event.target.files[0];
-        const base64: any = await convertBase64(file);
-        setBarcode({...barcode, value: base64});
-    }
+
 
     const convertBase64 = (file: any) => {
         return new Promise((resolve, reject) => {
@@ -71,88 +65,86 @@ const BookForm = () => {
 
     const inputCheck = (): boolean => {
         let isValid: boolean = true;
-        if (name.value === "" || undefined || null) {
+        if (bookName.value === "" || undefined || null) {
           isValid = false;
-          setName({ ...name, error: true });
+          setBookName({ ...bookName, error: true });
         } else {
-          setName({ ...name, error: false });
+          setBookName({ ...bookName, error: false });
         }
         
-        if (walletAddress.value === "" || undefined || null) {
+        if (author.value === "" || undefined || null) {
           isValid = false;
-          setWalletAddress({ ...walletAddress, error: true });
+          setAuthor({ ...author, error: true });
         } else {
-          setWalletAddress({ ...walletAddress, error: false });
+          setAuthor({ ...author, error: false });
         }
 
-        if (bankName.value === "" || undefined || null) {
+        if (publisher.value === "" || undefined || null) {
           isValid = false;
-          setBankName({ ...bankName, error: true });
+          setPublisher({ ...publisher, error: true });
         } else {
-          setBankName({ ...bankName, error: false });
+          setPublisher({ ...publisher, error: false });
         }
-        if (accountName.value === "" || undefined || null) {
+        if (language.value === "" || undefined || null) {
           isValid = false;
-          setAccountName({ ...accountName, error: true });
+          setLanguage({ ...language, error: true });
         } else {
-          setAccountName({ ...accountName, error: false });
+          setLanguage({ ...language, error: false });
         }
-        if (accountNumber.value === "" || undefined || null) {
+        if (categories.value.length < 1  || undefined || null) {
           isValid = false;
-          setAccountNumber({ ...accountNumber, error: true });
+          setCategories({ ...categories, error: true });
         } else {
-          setAccountNumber({ ...accountNumber, error: false });
-        }
-
-        if (exchangePlatform.value === "" || undefined || null) {
-          isValid = false;
-          setExchangePlatform({ ...exchangePlatform, error: true });
-        } else {
-          setExchangePlatform({ ...exchangePlatform, error: false });
+          setCategories({ ...categories, error: false });
         }
 
-        if (rate.value === 0 || undefined || null) {
+        if (bookStatus.value === "" || undefined || null) {
           isValid = false;
-          setRate({ ...rate, error: true });
+          setBookStatus({ ...bookStatus, error: true });
         } else {
-          setRate({ ...rate, error: false });
+          setBookStatus({ ...bookStatus, error: false });
+        }
+
+        if (bookCountAvailable.value === 0 || undefined || null) {
+          isValid = false;
+          setBookCountAvailable({ ...bookCountAvailable, error: true });
+        } else {
+          setBookCountAvailable({ ...bookCountAvailable, error: false });
         }
 
         return isValid;
     };
 
     const clearFormStates = () => {
-        setGiftcardImage({value: '', error: false});
-        setBarcode({value: '', error: false});
-        setName({value: '', error: false});
-        setType({value: '', error: false});
-        setRate({value: 0, error: false});
-        setBankName({value: '', error: false});
-        setAccountName({value: '', error: false});
-        setAccountNumber({value: '', error: false});
-        setExchangePlatform({value: '', error: false});
+        setBookImg({value: '', error: false});
+        setBookName({value: '', error: false});
+        setAuthor({value: '', error: false});
+        setPublisher({value: '', error: false});
+        setBookCountAvailable({value: 0, error: false});
+        setLanguage({value: '', error: false});
+        setBookStatus({value: '', error: false});
+        setCategories({value: [], error: false});
     }
 
     const handleSubmit = () => {
         if (inputCheck()) {
             setLoading(true);
             let data = { 
-                name: name.value,
-                rate: rate.value,
-                type: type.value,
-                walletAddress: walletAddress.value,
-                bankName: bankName.value,
-                giftcardImage: '',
-                accountName: accountName.value,
-                accountNumber: accountNumber.value,
-                exchangePlatform: exchangePlatform.value,
+                bookName: bookName.value,
+                author: author.value,
+                language: language.value,
+                publisher: publisher.value,
+                bookCountAvailable: bookCountAvailable.value,
+                bookStatus: bookStatus.value,
+                // categories: categories.value,
+                categories: ["64cee4033b2d4a40d4b292e5"],
+                // bookImg: '',
+                
             };
-            if(giftcardImage.value !== ''){
-                data.giftcardImage = giftcardImage.value;
-            }
-            // if(barcode.value !== ''){
-            //     data.barcode = barcode.value;
+            // if(bookImg.value !== ''){
+            //     data.bookImg = bookImg.value;
             // }
+            
           CREATE_BOOK(data)
             .then((res: AxiosResponse<ApiResponse>) => {
                 const { message, payload } = res.data;
@@ -178,16 +170,16 @@ const BookForm = () => {
                 <div>
                     <div className="my-3">
                         <label htmlFor="shortName" className="text-[#BFBFBF] text-sm block">
-                            Giftcard image
+                            Book image
                         </label>
                         <div
                             className={`border-2 rounded-md my-3 h-60 w-full flex justify-center ${
-                                giftcardImage.error ? 'error-border' : 'input-border'
+                                bookImg.error ? 'error-border' : 'input-border'
                             } px-4 py-2 `}
                         >
                             {
-                                giftcardImage.value ? 
-                                <img src={giftcardImage?.value} alt="uploaded" /> :
+                                bookImg.value ? 
+                                <img src={bookImg?.value} alt="uploaded" /> :
                                 <button className='text-center text-[#7F7F80]' onClick={() => openFile()}>
                                     + <br /> Choose file
                                 </button>
@@ -201,30 +193,6 @@ const BookForm = () => {
                         </div>
                     </div>
                     
-                    {/* <div className="my-3">
-                        <label htmlFor="shortName" className="text-[#BFBFBF] text-sm block">
-                            Wallet QR code
-                        </label>
-                        <div
-                            className={`border-2 rounded-md my-3 h-60 w-full flex justify-center ${
-                                barcode.error ? 'error-border' : 'input-border'
-                            } px-4 py-2 `}
-                        >
-                            {
-                                barcode.value ? 
-                                <img src={barcode?.value} alt="uploaded" /> :
-                                <button className='text-center text-[#7F7F80]' onClick={() => openFile()}>
-                                    + <br /> Choose file
-                                </button>
-                            }
-                            <input 
-                                type="file" 
-                                className='hidden'
-                                ref={fileRef}
-                                onChange={(e) => handleBarcodeFileRead(e)}
-                            />
-                        </div>
-                    </div> */}
                 </div>
 
                 <div>
@@ -232,138 +200,130 @@ const BookForm = () => {
 
                         <div className="my-3">
                             <label htmlFor="name" className="text-[#BFBFBF] text-sm block">
-                                Gift card Name*
+                                Book Name*
                             </label>
                             <input
                                 type="text"
                                 name="name"
-                                value={name.value}
+                                value={bookName.value}
                                 onChange={(e) =>
-                                    setName({ ...name, value: e.target.value })
+                                    setBookName({ ...bookName, value: e.target.value })
                                 }
                                 className={`bg-white text-[#6A6A6A] border-2 ${
-                                    name.error ? 'error-border' : 'input-border'
+                                    bookName.error ? 'error-border' : 'input-border'
                                 } rounded-md px-4 py-2 w-full`}
                             />
                         </div>
 
                         <div className="my-3">
                             <label htmlFor="rate" className="text-[#BFBFBF] text-sm block">
-                                Rate in Usd*
+                                Author*
                             </label>
                             <input
-                                type="number"
-                                name="rate"
+                                type="text"
+                                name="author"
                                 min={0}
-                                value={rate.value}
+                                value={author.value}
                                 onChange={(e) =>
-                                    setRate({ ...rate, value: parseInt(e.target.value) })
+                                    setAuthor({ ...author, value: e.target.value })
                                 }
                                 className={`bg-white text-[#6A6A6A] border-2 ${
-                                    rate.error ? 'error-border' : 'input-border'
+                                    author.error ? 'error-border' : 'input-border'
+                                } rounded-md px-4 py-2 w-full`}
+                            />
+                        </div>
+                        <div className="my-3">
+                            <label htmlFor="rate" className="text-[#BFBFBF] text-sm block">
+                                Pulisher*
+                            </label>
+                            <input
+                                type="text"
+                                name="publisher"
+                                min={0}
+                                value={publisher.value}
+                                onChange={(e) =>
+                                    setPublisher({ ...publisher, value: e.target.value })
+                                }
+                                className={`bg-white text-[#6A6A6A] border-2 ${
+                                    publisher.error ? 'error-border' : 'input-border'
                                 } rounded-md px-4 py-2 w-full`}
                             />
                         </div>
 
                         <div className="my-3">
-                            <label htmlFor="rate" className="text-[#BFBFBF] text-sm block">
-                                Card Type*
+                            <label htmlFor="bookStatus" className="text-[#BFBFBF] text-sm block">
+                                Book Category*
                             </label>
                             <select 
-                                name="type" 
-                                id="type"
-                                onChange={(e) => setType({ ...type, value: e.target.value })}
+                                name="categories" 
+                                id="categories"
+                                onChange={(e) => setCategories({ ...categories, value: [...categories.value, e.target.value] })}
                                 className={`bg-white text-[#6A6A6A] border-2 ${
-                                    type.error ? 'error-border' : 'input-border'
+                                    categories.error ? 'error-border' : 'input-border'
                                 } rounded-md px-4 py-2 w-full`}
                             >
-                                <option value="">card type</option>
-                                <option value="PHYSICAL">Physical card</option>
-                                <option value="ECODE">Ecode</option>
+                                <option value="">Select Book Category</option>
+                                <option value="AI">AI</option>
+                                <option value="Chemisty">Chemistry</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Business">Business</option>
+                                <option value="Economics">Economics</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Information techology">Information techology</option>
+                            </select>
+                        </div>
+                        <div className="my-3">
+                            <label htmlFor="rate" className="text-[#BFBFBF] text-sm block">
+                                Book Status*
+                            </label>
+                            <select 
+                                name="bookStatus" 
+                                id="bookStatus"
+                                onChange={(e) => setBookStatus({ ...bookStatus, value: e.target.value })}
+                                className={`bg-white text-[#6A6A6A] border-2 ${
+                                    bookStatus.error ? 'error-border' : 'input-border'
+                                } rounded-md px-4 py-2 w-full`}
+                            >
+                                <option value="">Select Book Status</option>
+                                <option value="AVAILABLE">AVAILABLE</option>
+                                <option value="UNAVAILABLE">UNAVAILABLE</option>
+                                <option value="PENDING">PENDING</option>
+                                <option value="PUBLISHED">PUBLISHED</option>
+                                <option value="OUTDATED">OUTDATED</option>
+                                <option value="UNPUBLISHED">UNPUBLISHED</option>
                             </select>
                         </div>
 
                         <div className="my-3">
                             <label htmlFor="walletAddress" className="text-[#BFBFBF] text-sm block">
-                                Wallet Address*
+                                Language*
                             </label>
                             <input
                                 type="text"
-                                name="walletAddress"
-                                value={walletAddress.value}
+                                name="language"
+                                value={language.value}
                                 onChange={(e) =>
-                                    setWalletAddress({ ...walletAddress, value: e.target.value })
+                                    setLanguage({ ...language, value: e.target.value })
                                 }
                                 className={`bg-white text-[#6A6A6A] border-2 ${
-                                    walletAddress.error ? 'error-border' : 'input-border'
+                                    language.error ? 'error-border' : 'input-border'
                                 } rounded-md px-4 py-2 w-full`}
                             />
                         </div>
 
                         <div className="my-3">
-                            <label htmlFor="bankName" className="text-[#BFBFBF] text-sm block">
-                                Bank Name*
+                            <label htmlFor="bookCountAvailable" className="text-[#BFBFBF] text-sm block">
+                                Quantity*
                             </label>
                             <input
-                                type="text"
-                                name="bankName"
-                                value={bankName.value}
+                                type="number"
+                                name="bookCountAvailable"
+                                value={bookCountAvailable.value}
                                 onChange={(e) =>
-                                    setBankName({ ...bankName, value: e.target.value })
+                                    setBookCountAvailable({ ...bookCountAvailable, value: parseInt(e.target.value) })
                                 }
                                 className={`bg-white text-[#6A6A6A] border-2 ${
-                                    bankName.error ? 'error-border' : 'input-border'
-                                } rounded-md px-4 py-2 w-full`}
-                            />
-                        </div>
-
-                        <div className="my-3">
-                            <label htmlFor="accountName" className="text-[#BFBFBF] text-sm block">
-                                Account Name*
-                            </label>
-                            <input
-                                type="text"
-                                name="accountName"
-                                value={accountName.value}
-                                onChange={(e) =>
-                                    setAccountName({ ...accountName, value: e.target.value })
-                                }
-                                className={`bg-white text-[#6A6A6A] border-2 ${
-                                    accountName.error ? 'error-border' : 'input-border'
-                                } rounded-md px-4 py-2 w-full`}
-                            />
-                        </div>
-
-                        <div className="my-3">
-                            <label htmlFor="accountNumber" className="text-[#BFBFBF] text-sm block">
-                                Account Number*
-                            </label>
-                            <input
-                                type="text"
-                                name="accountNumber"
-                                value={accountNumber.value}
-                                onChange={(e) =>
-                                    setAccountNumber({ ...accountNumber, value: e.target.value })
-                                }
-                                className={`bg-white text-[#6A6A6A] border-2 ${
-                                    accountNumber.error ? 'error-border' : 'input-border'
-                                } rounded-md px-4 py-2 w-full`}
-                            />
-                        </div>
-
-                        <div className="my-3">
-                            <label htmlFor="exchangePlatform" className="text-[#BFBFBF] text-sm block">
-                                Exchange Platform*
-                            </label>
-                            <input
-                                type="text"
-                                name="exchangePlatform"
-                                value={exchangePlatform.value}
-                                onChange={(e) =>
-                                    setExchangePlatform({ ...exchangePlatform, value: e.target.value })
-                                }
-                                className={`bg-white text-[#6A6A6A] border-2 ${
-                                    exchangePlatform.error ? 'error-border' : 'input-border'
+                                    bookCountAvailable.error ? 'error-border' : 'input-border'
                                 } rounded-md px-4 py-2 w-full`}
                             />
                         </div>

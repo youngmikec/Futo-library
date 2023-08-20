@@ -9,7 +9,7 @@ export type BookState = {
 }
 
 export type BookRequestState = {
-    value: BookRequest | null
+    value: BookRequest[];
 }
 
 export type BookCategoryState = {
