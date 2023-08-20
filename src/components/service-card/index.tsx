@@ -21,7 +21,7 @@ const ServiceCard = ({title, subTitle, img, link, linkText}: Props) => {
                     <div className='flex justify-center mb-3'>
                         <img src={img} className='object-contain h-28 w-48' alt="service" />
                     </div>
-                    <button className='bg-[#8652A4] w-10/12 rounded-lg text-white my-4 '>
+                    <button className='bg-[#40b142] w-10/12 rounded-lg text-white my-4 '>
                         <Link to={link}>{linkText}</Link>
                     </button>
                 </Card>

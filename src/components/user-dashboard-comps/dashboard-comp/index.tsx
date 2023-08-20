@@ -16,16 +16,17 @@ import sell from '../../../assets/images/sell_crypto.png'
 import "./style.css";
 import ServiceCard from '../../service-card';
 import DashboardCard from './dashbord-card';
-import { ApiResponse, Order, User } from '../../../common';
-import { RETREIVE_ORDERS } from '../../../services';
+import { ApiResponse, User } from '../../../common';
+import { RETREIVE_BOOKREQUESTS } from '../../../services';
 import { getItem } from '../../../utils';
 import Card from '../../../shared/card';
+import { BookRequest } from '../../../common/book-request';
 
 const DashboardComp = () => {
     // const ordersState = useSelector((state: RootState) => state.orderState.value);
     
     const [loading, setLoading] = useState<boolean>(false);
-    const [orderRecords, setOrderRecords] = useState<Order[] | []>([]);
+    const [orderRecords, setOrderRecords] = useState<BookRequest[] | []>([]);
 
     const notify = (type: string, msg: string) => {
         if (type === "success") {
@@ -44,8 +45,8 @@ const DashboardComp = () => {
     const retreiveOrders = () => {
         setLoading(true);
         const userDetail: User = getItem('clientD');
-        const queryString: string = `?createdBy=${userDetail.id}&sort=-createdAt&limit=10&populate=airtime,cryptocurrency,giftcard`;        
-        RETREIVE_ORDERS(queryString).then((res: AxiosResponse<ApiResponse>) => {
+        const queryString: string = `?createdBy=${userDetail._id}&sort=-createdAt&limit=10&populate=bookId,borrowerId`;        
+        RETREIVE_BOOKREQUESTS(queryString).then((res: AxiosResponse<ApiResponse>) => {
             setLoading(false);
             const { success, message, payload } = res.data;
             if(success){
@@ -94,12 +95,23 @@ const DashboardComp = () => {
                         >
                             <div>
                                 <ServiceCard
-                                    title="Airtime to Cash"
-                                    subTitle='Convert your airtime to cash'
+                                    title="Books Shelve"
+                                    subTitle='Book acquistion just got easy.'
                                     link='/airtime'
                                     linkText='Convert'
                                     img={airtime}
                                 />
+                            </div>
+
+                            <div>
+                                <ServiceCard
+                                    title="Book Requests"
+                                    subTitle='Metrics of incoming and outgoing books'
+                                    link='/sell-crypto'
+                                    linkText='Sell'
+                                    img={sell}
+                                />
+
                             </div>
 
 
@@ -123,23 +135,14 @@ const DashboardComp = () => {
                                     img={crypto}
                                 />
                             </div>   
-                            <div>
-                                <ServiceCard
-                                    title="Sell Crypto"
-                                    subTitle='Sell your crypto currency'
-                                    link='/sell-crypto'
-                                    linkText='Sell'
-                                    img={sell}
-                                />
-
-                            </div>                            
+                                                      
 
 
                         </div>
 
                         <section>
                             <div className='my-8'>
-                                <h4 className='text-[#7F7F80] font-semibold'>Recent Transactions</h4>
+                                <h4 className='text-[#7F7F80] font-semibold'>Recent Book Requests</h4>
                             </div>
 
                             <div>
@@ -149,32 +152,32 @@ const DashboardComp = () => {
                                             <thead className=''>
                                                 <tr className='border-spacing-y-4'>
                                                     <th className='table-caption text-left'>#</th>
-                                                    <th>Date</th>
+                                                    <th>Book</th>
                                                     <th>Type</th>
-                                                    <th>Amount</th>
                                                     <th>Status</th>
+                                                    <th>Date</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 {   orderRecords && orderRecords.length > 0 ?
-                                                    orderRecords.map((item: Order, idx: number) => {
+                                                    orderRecords.map((item: BookRequest, idx: number) => {
                                                         return <tr key={idx} className='my-4'>
                                                         <td className="text-left border-spacing-y-4">{ idx + 1 }</td>
-                                                        <td className="text-left py-3">{ moment(item?.createdAt).format("DD-MM-YYYY") }</td>
-                                                        <td className="text-left py-3">{ item?.orderType }</td>
-                                                        <td className="text-left py-3"><span className='line-through'>N</span>{ item?.amountReceivable } </td>
+                                                        <td className="text-left py-3">{ item?.bookName } </td>
+                                                        <td className="text-left py-3">{ item?.transactionType }</td>
                                                         <td className="text-left py-3">
                                                             <span className={
-                                                                (item.status === "COMPLETED") ? 'text-[#2CE71C]' : 'text-[#1cd9e7]'
-                                                            
-                                                            }>{ item.status }</span>
+                                                                (item.transactionStatus === "AVAILABLE") ? 'text-[#2CE71C]' : 'text-[#1cd9e7]'
+                                                                
+                                                            }>{ item?.transactionStatus }</span>
                                                         </td>
 
+                                                        <td className="text-left py-3">{ moment(item?.createdAt).format("DD-MM-YYYY") }</td>
                                                     </tr>
                                                     }) :
 
                                                     <tr>
-                                                        <td colSpan={5} className="text-left py-3">No Users available</td>
+                                                        <td colSpan={5} className="text-left py-3">No Book Request available</td>
                                                     </tr>
                                                 }
                                             </tbody>

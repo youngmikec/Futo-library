@@ -81,7 +81,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     {/* mobile view */}
-                    <div className="text-[#7F7F80] hover:text-[#8652A4] text-sm font-semibold mx-4">
+                    <div className="text-[#7F7F80] hover:text-[#40b142] text-sm font-semibold mx-4">
                         <span>
                             <Link to="/">Home</Link>
                         </span>
@@ -91,7 +91,7 @@ const Navbar = () => {
                             <Link to="/users-dashboard">How to trade</Link>
                         </span>
                     </div> */}
-                    <div className="text-[#7F7F80] hover:text-[#8652A4] text-sm font-semibold mx-8">
+                    <div className="text-[#7F7F80] hover:text-[#40b142] text-sm font-semibold mx-8">
                         <span>
                             <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer">Chat</a>
                         </span>
@@ -108,7 +108,7 @@ const Navbar = () => {
                     </div>
                     <div className="inline-flex rounded-full bg-[#b1bbdf]">
                         <Link to="/account">
-                            <img src={ userProfile?.profileImage ? userProfile.profileImage : profile } alt="profile" className='' width='40px' height='40px'  />
+                            <img src={ userProfile?.photo ? userProfile.photo : profile } alt="profile" className='' width='40px' height='40px'  />
                         </Link>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ const Navbar = () => {
 
                             <ul className="list-none text-[#7F7F80]">
                                 <li 
-                                className={`${ pathname === '/users-dashboard' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                className={`${ pathname === '/users-dashboard' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                 title="Dashboard"
                             >
                                     <Link to="/users-dashboard">
@@ -138,7 +138,7 @@ const Navbar = () => {
                                 </li>
 
                                 <li 
-                                    className={`${ pathname === '/sell-crypto' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`${ pathname === '/sell-crypto' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="sell crypto"
                                 >
                                     <Link to="/sell-crypto">
@@ -149,7 +149,7 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li 
-                                    className={`${ pathname === '/buy-crypto' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`${ pathname === '/buy-crypto' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="buy crypto"
                                 >
                                     <Link to="/buy-crypto">
@@ -160,7 +160,7 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li 
-                                    className={`${ pathname === '/trade-giftcard' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`${ pathname === '/trade-giftcard' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="trade giftcard"
                                 >
                                     <Link to="/trade-giftcard">
@@ -171,7 +171,7 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li 
-                                    className={`${ pathname === '/airtime' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`${ pathname === '/airtime' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="airtime"
                                 >
                                     <Link to="/airtime">
@@ -182,7 +182,7 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li 
-                                    className={`${ pathname === '/history' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`${ pathname === '/history' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="Order history"
                                 >
                                     <Link to="/history">
@@ -193,7 +193,7 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li 
-                                    className={`${ pathname === '/account' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`${ pathname === '/account' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="Account setting"
                                 >
                                     <Link to="/account">
@@ -205,7 +205,7 @@ const Navbar = () => {
                                 </li>
 
                                 <li 
-                                    className={`cursor-pointer my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                                    className={`cursor-pointer my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                                     title="log out"
                                     onClick={() => handleLogout()}
                                 >

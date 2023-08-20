@@ -6,7 +6,7 @@ import { BASE_URL } from './config';
 const url: string | undefined = BASE_URL;
 
 export const LOGIN_USER = async (data: {[key: string]: any}) => {
-    return axios.post(`${url}/users/login`, data);
+    return axios.post(`${url}/auth/login`, data);
 };
 
 export const VERIFY_EMAIL = async (data: {[key: string]: any}) => {

@@ -9,7 +9,7 @@ import { setItem } from '../../utils';
 import { ApiResponse } from '../../common';
 import { LOGIN_USER } from '../../services';
 import logo from '../../assets/images/logo-white.png';
-import logoBlack from '../../assets/images/logo.png';
+import logoBlack from '../../assets/images/FUTO_logo.png';
 // import googleIcon from '../../assets/icons/google-icon.png';
 // import { ADD_USER_PROFILE } from '../../store/user';
 
@@ -60,6 +60,7 @@ const SignInComp = () => {
             const data = { email: email.value, password: password.value};
             LOGIN_USER(data).then((res: AxiosResponse<ApiResponse>) => {
                 setLoading(false);
+                console.log('res', res.data.payload);
                 const { token, user } = res.data.payload;
                 setItem('clientToken', token);
                 setItem('clientD', user);
@@ -136,9 +137,9 @@ const SignInComp = () => {
                     <div className="flex justify-between my-4">
                         <div>
                             <input type="checkbox" name="" id="" />
-                            <span className='text-[#8652A4] text-sm mx-3 font-semibold'>Remember me</span>
+                            <span className='text-[#40b142] text-sm mx-3 font-semibold'>Remember me</span>
                         </div>
-                        <p className='text-[#8652A4] text-sm font-semibold'>
+                        <p className='text-[#40b142] text-sm font-semibold'>
                             <Link to="/forgot-password">
                                 Forgot Password?
                             </Link>
@@ -146,20 +147,20 @@ const SignInComp = () => {
                     </div>
 
                     {/* <div className="relative my-6 text-center">
-                        <p className='text-[#8652A4] text-lg text-center z-40'><span className='bg-[#ffffff] px-4 py-1'>or sign in with</span></p>
-                        <hr className='border-[#8652a48f] w-full -mt-4' />
+                        <p className='text-[#40b142] text-lg text-center z-40'><span className='bg-[#ffffff] px-4 py-1'>or sign in with</span></p>
+                        <hr className='border-[#40b1428f] w-full -mt-4' />
                         <img src={googleIcon} className="my-7 mx-auto" alt="google" />
                     </div> */}
 
                     <div className="w-8/12 my-12 mx-auto text-center">
                         <button 
                             onClick={() => handleLogin() } 
-                            className='bg-[#8652A4] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6'
+                            className='bg-[#40b142] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6'
                         >
                             { loading ? 'processing' : 'Sign in' }
                         </button>
-                        <p className='text-[#8652a48f] text-sm block my-4'>Don't have an account?    
-                            <span className='text-[#8652A4] font-bold'><Link to="/sign-up">  Sign Up</Link></span>
+                        <p className='text-[#40b1428f] text-sm block my-4'>Don't have an account?    
+                            <span className='text-[#40b142] font-bold'><Link to="/sign-up">  Sign Up</Link></span>
                         </p>
                     </div>
                 </div>

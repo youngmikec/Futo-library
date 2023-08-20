@@ -5,7 +5,7 @@ import { RiDashboardFill } from 'react-icons/ri';
 import { IoCardOutline, IoCopyOutline } from 'react-icons/io5';
 import { MdOutlineDashboardCustomize } from 'react-icons/md';
 
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/FUTO_logo.png';
 import { CgLogOff } from 'react-icons/cg';
 
 type Props = {
@@ -33,7 +33,7 @@ const Sidebar = ({sidebarMenus}: Props) => {
                 </div>
                 <ul className="list-none text-[#8c8c8c]">
                     <li 
-                        className={`${ pathname === '/users-dashboard' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` } 
+                        className={`${ pathname === '/users-dashboard' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` } 
                         title="Dashboard"
                     >
                         <Link to="/users-dashboard">
@@ -45,40 +45,40 @@ const Sidebar = ({sidebarMenus}: Props) => {
                     </li>
             
                     <li 
-                        className={`${ pathname === '/sell-crypto' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
-                        title="sell crypto"
+                        className={`${ pathname === '/books' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
+                        title="Books"
                     >
-                        <Link to="/sell-crypto">
+                        <Link to="/books">
                             <div className='flex justify-start'>
                                 <div><span><AiOutlineDollar className='text-xl'/></span></div>
-                                <div className='mx-2'>Sell Crypto</div>
+                                <div className='mx-2'>Books</div>
                             </div>           
                         </Link>
                     </li>
                     <li 
-                        className={`${ pathname === '/buy-crypto' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
-                        title="buy crypto"
+                        className={`${ pathname === '/users' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
+                        title="Staff and Student users."
                     >
-                        <Link to="/buy-crypto">
+                        <Link to="/users">
                             <div className='flex justify-start'>
                                 <div><span><AiOutlineDollar className='text-xl'/></span></div>
-                                <div className='mx-2'>Buy Crypto</div>
+                                <div className='mx-2'>Users</div>
                             </div>                
                         </Link>
                     </li>
                     <li 
-                        className={`${ pathname === '/trade-giftcard' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
-                        title="trade giftcard"
+                        className={`${ pathname === '/book-requests' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
+                        title="Book Requests"
                     >
-                        <Link to="/trade-giftcard">
+                        <Link to="/book-requests">
                             <div className='flex justify-start'>
                                 <div><span><IoCardOutline  className='text-xl'/></span></div>
-                                <div className='mx-2'>Trade Giftcard</div>
+                                <div className='mx-2'>Book Requests</div>
                             </div>                       
                         </Link>
                     </li>
-                    <li 
-                        className={`${ pathname === '/airtime' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                    {/* <li 
+                        className={`${ pathname === '/airtime' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                         title="airtime"
                     >
                         <Link to="/airtime">
@@ -89,7 +89,7 @@ const Sidebar = ({sidebarMenus}: Props) => {
                         </Link>
                     </li>
                     <li 
-                        className={`${ pathname === '/history' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                        className={`${ pathname === '/history' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                         title="Order history"
                     >
                         <Link to="/history">
@@ -98,9 +98,9 @@ const Sidebar = ({sidebarMenus}: Props) => {
                                 <div className='mx-2'>Order History</div>
                             </div>                                   
                         </Link>
-                    </li>
+                    </li> */}
                     <li 
-                        className={`${ pathname === '/account' && 'bg-[#8652A4] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white` }
+                        className={`${ pathname === '/account' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                         title="Account setting"
                     >
                         <Link to="/account">
@@ -112,7 +112,7 @@ const Sidebar = ({sidebarMenus}: Props) => {
                     </li>
 
                     <li 
-                        className={"cursor-pointer my-6 py-3 px-4 text-center rounded-md hover:bg-[#8652A4] hover:text-white" }
+                        className={"cursor-pointer my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white" }
                         title="account"
                         onClick={() => handleLogout()}
                     >

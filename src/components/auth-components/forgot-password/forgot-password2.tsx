@@ -11,7 +11,7 @@ import { VERIFY_RESET_CODE } from '../../../services';
 // icons && images
 import { AiFillLeftCircle } from 'react-icons/ai';
 import logo from "../../../assets/images/logo-white.png";
-import logoBlack from "../../../assets/images/logo.png";
+import logoBlack from "../../../assets/images/FUTO_logo.png";
 import googleIcon from "../../../assets/icons/google-icon.png";
  
   type inputProps={
@@ -124,8 +124,8 @@ const ForgotPassword2 = ( { changeStep }: Props) => {
         </div>
 
         <div className='fixed right-8 top-8'>
-            <div className='text-[#8652A4] md:text-white lg:text-white'>
-                <p className='text-[#8652A4] md:text-white lg:text-white text-xl inline-flex cursor-pointer' onClick={() => changeStep(1)}>
+            <div className='text-[#40b142] md:text-white lg:text-white'>
+                <p className='text-[#40b142] md:text-white lg:text-white text-xl inline-flex cursor-pointer' onClick={() => changeStep(1)}>
                     <AiFillLeftCircle className='mr-2 my-auto' />
                     <span>Back</span>
                 </p>
@@ -178,13 +178,13 @@ const ForgotPassword2 = ( { changeStep }: Props) => {
           <div className="w-8/12 my-4 mx-auto text-center">
             <button 
               onClick={() => handleVerifyCode()}
-              className="bg-[#8652A4] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6">
+              className="bg-[#40b142] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6">
               { loading ? 'Verifying' : 'Verify' }
             </button>
 
-            <p className="text-[#8652a48f] text-sm block my-4">
+            <p className="text-[#40b1428f] text-sm block my-4">
               Already have an account?
-              <span className="text-[#8652A4] font-bold mx-2">
+              <span className="text-[#40b142] font-bold mx-2">
                 <Link to="/sign-in">Sign in</Link>
               </span>
             </p>

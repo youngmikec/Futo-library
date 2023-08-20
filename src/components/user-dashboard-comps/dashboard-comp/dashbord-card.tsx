@@ -12,7 +12,7 @@ const DashboardCard = ({image}: Props) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         blendMode: "overlay",
-        backgroundColor: '#8652A4',
+        backgroundColor: '#40b142',
         opacity: 0.95
     }
 

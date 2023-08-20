@@ -8,7 +8,7 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 import { MdCancel, MdCardGiftcard } from 'react-icons/md';
 
 import logo from '../../assets/images/logo-white.png';
-import logoDark from '../../assets/images/logo.png';
+import logoDark from '../../assets/images/FUTO_logo.png';
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -42,7 +42,7 @@ const Navbar = () => {
                                         >
                                             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
                                         </svg>
-                                        <li className="hover:bg-[#8652A4] text-[#8652A4] border-b-2 border-[#f1dbff] hover:cursor-pointer pr-10 p-3 whitespace-no-wrap hover:text-white text-sm md:text-base ">
+                                        <li className="hover:bg-[#40b142] text-[#40b142] border-b-2 border-[#f1dbff] hover:cursor-pointer pr-10 p-3 whitespace-no-wrap hover:text-white text-sm md:text-base ">
                                             <Link to="/cryptos"> 
                                                 <div className="flex justify-start">
                                                     <div className='mr-2 my-auto h-3'><CiDollar /></div>
@@ -51,7 +51,7 @@ const Navbar = () => {
                                             </Link>
                                         </li>
 
-                                        <li className="hover:bg-[#8652A4] text-[#8652A4] border-b-2 border-[#f1dbff] hover:cursor-pointer pr-10 p-3 whitespace-no-wrap hover:text-white text-sm md:text-base ">
+                                        <li className="hover:bg-[#40b142] text-[#40b142] border-b-2 border-[#f1dbff] hover:cursor-pointer pr-10 p-3 whitespace-no-wrap hover:text-white text-sm md:text-base ">
                                             <Link to="/airtimes"> 
                                                 <div className="flex justify-start">
                                                     <div className='mr-2 my-auto h-3'><CiDollar /></div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                                             </Link>
                                         </li>
 
-                                        <li className="hover:bg-[#8652A4] text-[#8652A4] border-b-2 border-[#f1dbff] hover:cursor-pointer pr-10 p-3 whitespace-no-wrap hover:text-white text-sm md:text-base ">
+                                        <li className="hover:bg-[#40b142] text-[#40b142] border-b-2 border-[#f1dbff] hover:cursor-pointer pr-10 p-3 whitespace-no-wrap hover:text-white text-sm md:text-base ">
                                             <Link to="/giftcards"> 
                                                 <div className="flex justify-start">
                                                     <div className='mr-2 my-auto h-3'><MdCardGiftcard /></div>
@@ -104,9 +104,9 @@ const Navbar = () => {
                                         leading-tight
                                         uppercase
                                         rounded
-                                        hover:bg-white hover:shadow-lg hover:text-[#8652A4]
-                                        focus:bg-white focus:text-[#8652A4] focus:shadow-lg focus:outline-none focus:ring-0
-                                        active:bg-white active:shadow-lg active:text-[#8652A4]
+                                        hover:bg-white hover:shadow-lg hover:text-[#40b142]
+                                        focus:bg-white focus:text-[#40b142] focus:shadow-lg focus:outline-none focus:ring-0
+                                        active:bg-white active:shadow-lg active:text-[#40b142]
                                         transition
                                         duration-150
                                         ease-in-out
@@ -138,7 +138,7 @@ const Navbar = () => {
                             </div>
                             <div>
                                 <p onClick={() => toggleShowDrowdown()} className='p-2 rounded-full bg-gray-100'>
-                                    <MdCancel className="text-3xl text-[#8652A4]" />
+                                    <MdCancel className="text-3xl text-[#40b142]" />
                                 </p>
                             </div>
                         </div>

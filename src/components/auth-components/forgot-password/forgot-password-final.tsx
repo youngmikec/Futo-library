@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 //images
 import logo from "../../../assets/images/logo-white.png";
-import logoBlack from "../../../assets/images/logo.png";
+import logoBlack from "../../../assets/images/FUTO_logo.png";
 import success from '../../../assets/images/high_five.png'
 import googleIcon from "../../../assets/icons/google-icon.png";
 
@@ -43,8 +43,8 @@ const ForgotPassword4 = ({changeStep}: Prop) => {
                     </div>
 
                     {/* <div className="relative my-6 text-center">
-                      <hr className="border-[#8652a48f] w-full" />
-                      <p className="text-[#8652A4] text-sm px-4 bg-white absolute -top-3 left-56">
+                      <hr className="border-[#40b1428f] w-full" />
+                      <p className="text-[#40b142] text-sm px-4 bg-white absolute -top-3 left-56">
                         or sign up with
                       </p>
 
@@ -53,14 +53,14 @@ const ForgotPassword4 = ({changeStep}: Prop) => {
 
                   <div className="w-8/12 my-4 mx-auto text-center">
                     <Link to="/sign-in">
-                      <button className="bg-[#8652A4] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6">
+                      <button className="bg-[#40b142] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6">
                           Sign in
                       </button>
                     </Link>
 
-                    <p className="text-[#8652a48f] text-sm block my-4">
+                    <p className="text-[#40b1428f] text-sm block my-4">
                       Already have an account?
-                      <span className="text-[#8652A4] mx-2 font-bold">
+                      <span className="text-[#40b142] mx-2 font-bold">
                         <Link to="/sign-in">Sign in</Link>
                       </span>
                     </p>

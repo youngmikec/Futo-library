@@ -7,7 +7,7 @@ import { AxiosResponse } from "axios";
 import '../style.css';
 import { ApiResponse } from "../../../common";
 import logo from "../../../assets/images/logo-white.png";
-import logoBlack from "../../../assets/images/logo.png";
+import logoBlack from "../../../assets/images/FUTO_logo.png";
 import { SEND_PASSWORD_RESET_CODE } from '../../../services';
 // import googleIcon from "../../../assets/icons/google-icon.png";
 import { setItem } from "../../../utils";
@@ -96,13 +96,13 @@ const ForgotPasswordComp = ({ changeStep }: Prop) => {
 
             <div className="w-8/12 my-4 mx-auto text-center">
               <button onClick={() => handleSendResetCode() }
-              className="bg-[#8652A4] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6">
+              className="bg-[#40b142] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6">
                 { loading ? 'sending' : 'Next' }
               </button>
 
-              <p className="text-[#8652a48f] text-sm block my-4">
+              <p className="text-[#40b1428f] text-sm block my-4">
                 Already have an account?
-                <span className="mx-2 text-[#8652A4] font-bold">
+                <span className="mx-2 text-[#40b142] font-bold">
                   <Link to="/sign-in">Sign in</Link>
                 </span>
               </p>

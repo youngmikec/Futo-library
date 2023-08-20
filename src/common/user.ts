@@ -1,7 +1,11 @@
+import { BookRequest } from "./book-request";
 import { UserType } from "./enums";
-
+    
 export type User = {
     id: string;
+    _id: string;
+    regNumber: string;
+    employeeId: string;
     userType: UserType;
     code: string;
     resetCode: string;
@@ -10,12 +14,18 @@ export type User = {
     transactionPin: string;
     firstName: string;
     lastName: string;
-    profileImage: string;
-    gender: 'MALE' | 'FEMALE'
+    dob: Date;
+    photo: string;
+    gender: 'MALE' | 'FEMALE';
     address: string;
     password: string;
     email: string;
-    phone: string;
+    phoneNumber: string;
+    age: boolean;
+    isAdmin: boolean;
+    points: number;
+    activeTransactions: Array<BookRequest>;
+    prevTransactions: Array<BookRequest>;
     
     isProfileComplete: boolean;
     isVerified: boolean;

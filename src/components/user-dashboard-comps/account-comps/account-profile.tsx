@@ -12,7 +12,7 @@ const AccountProfile = () => {
     const fileRef: any = useRef<HTMLButtonElement>(null)
     const [email, setEmail] = useState<string>('');
     const [phone, setPhone] = useState<string>('');
-    const [profileImage, setProfileImage] = useState<string>('');
+    const [photo, setphoto] = useState<string>('');
     const [lastName, setLastName] = useState<string>('');
     const [firstName, setFirstName] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
@@ -39,7 +39,7 @@ const AccountProfile = () => {
     const handleFileRead = async (e: any) => {
         const file = e.target.files[0];
         const base64 = await convertBase64(file);
-        updateProfile({profileImage: base64})
+        updateProfile({photo: base64})
     }
 
     const convertBase64 = (file: any): Promise<any> => {
@@ -88,7 +88,7 @@ const AccountProfile = () => {
         setLastName(payload.lastName);
         setEmail(payload.email);
         setPhone(payload.phone);
-        setProfileImage(payload.profileImage);
+        setphoto(payload.photo);
     }
 
     const retreiveProfile = () => {
@@ -118,14 +118,14 @@ const AccountProfile = () => {
                     <div className='flex justify-start'>
                         <div className='mx-3'>
                             <div className="rounded-full bg-[#b1bbdf] p-1">
-                                <img src={profileImage || profile} className="rounded-full" alt="profile" width='80px' height='80px'  />
+                                <img src={photo || profile} className="rounded-full" alt="profile" width='80px' height='80px'  />
                             </div>
                         </div>
 
                         <div className='mx-3 my-auto'>
                             <button 
-                                className='hover:bg-[#8652A4] border-2 border-[#8652A4]
-                                text-[#8652A4] hover:text-white rounded-md py-1 px-6'
+                                className='hover:bg-[#40b142] border-2 border-[#40b142]
+                                text-[#40b142] hover:text-white rounded-md py-1 px-6'
                                 onClick={() => openFile()}
                             >
                                 Upload
@@ -134,7 +134,7 @@ const AccountProfile = () => {
                         </div>
 
                         {/* <div className='mx-3 my-auto'>
-                            <button className='text-[#8652A4] border-2 border-[#8652A4] rounded-md py-1 px-6'>
+                            <button className='text-[#40b142] border-2 border-[#40b142] rounded-md py-1 px-6'>
                                 Upload
                             </button>
                         </div> */}
@@ -200,7 +200,7 @@ const AccountProfile = () => {
 
                     <div className='mt-6 flex justify-center'>
                         <button 
-                            className='rounded-md bg-[#8652A4] text-white px-6 py-3'
+                            className='rounded-md bg-[#40b142] text-white px-6 py-3'
                             onClick={() => handleUpdateProfile()}
                         >
                             { updating ? 'Saving...' : 'Save Change'}

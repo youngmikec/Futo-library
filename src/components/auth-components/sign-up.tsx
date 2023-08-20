@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AxiosResponse } from 'axios';
 
 import logo from '../../assets/images/logo-white.png';
-import logoBlack from '../../assets/images/logo.png';
+import logoBlack from '../../assets/images/FUTO_logo.png';
 // import googleIcon from '../../assets/icons/google-icon.png';
 import './style.css';
 import { SIGN_UP_USER } from '../../services';
@@ -242,8 +242,8 @@ const SignUpComp = () => {
                         </div>
 
                         {/* <div className="relative my-8 text-center">
-                            <hr className='border-[#8652a48f] w-full' />
-                            <p className='text-[#8652A4] text-sm px-4 bg-white absolute -top-3 left-24 sm:left-60 md:left-32 lg:left-56 xl:left-80 '>or sign in with</p>
+                            <hr className='border-[#40b1428f] w-full' />
+                            <p className='text-[#40b142] text-sm px-4 bg-white absolute -top-3 left-24 sm:left-60 md:left-32 lg:left-56 xl:left-80 '>or sign in with</p>
                             <img src={googleIcon} className="my-4 mx-auto" alt="google" />
                         </div> */}
 
@@ -254,20 +254,20 @@ const SignUpComp = () => {
                                         setIsDefault(false);
                                     }
                                 } } 
-                                className='bg-[#8652A4] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6'
+                                className='bg-[#40b142] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6'
                             >
                                 Next
                             </button>
-                            <p className='text-[#8652a48f] text-sm block my-4'>Already have an account?   
-                                <span className='text-[#8652A4] mx-2 font-bold'><Link to="/sign-in">Sign in</Link></span>
+                            <p className='text-[#40b1428f] text-sm block my-4'>Already have an account?   
+                                <span className='text-[#40b142] mx-2 font-bold'><Link to="/sign-in">Sign in</Link></span>
                             </p>
                         </div>
                     </div> :
 
                     <div>
                         <div className='fixed right-8 top-8'>
-                            <div className='text-[#8652A4] md:text-white lg:text-white'>
-                                <p className='text-[#8652A4] md:text-white lg:text-white text-xl inline-flex cursor-pointer' onClick={() => setIsDefault(true)}>
+                            <div className='text-[#40b142] md:text-white lg:text-white'>
+                                <p className='text-[#40b142] md:text-white lg:text-white text-xl inline-flex cursor-pointer' onClick={() => setIsDefault(true)}>
                                     <AiFillLeftCircle className='mr-2 my-auto' />
                                     <span>Back</span>
                                 </p>
@@ -339,20 +339,20 @@ const SignUpComp = () => {
 
 
                             {/* <div className="relative my-8 text-center">
-                                <hr className='border-[#8652a48f] w-full' />
-                                <p className='text-[#8652A4] text-sm px-4 bg-white absolute -top-3 left-24 sm:left-60 md:left-32 lg:left-56 xl:left-80 '>or sign in with</p>
+                                <hr className='border-[#40b1428f] w-full' />
+                                <p className='text-[#40b142] text-sm px-4 bg-white absolute -top-3 left-24 sm:left-60 md:left-32 lg:left-56 xl:left-80 '>or sign in with</p>
                                 <img src={googleIcon} className="my-4 mx-auto" alt="google" />
                             </div> */}
 
                             <div className="w-8/12 my-4 mx-auto text-center">
                                 <button 
                                     onClick={() => handleSignUp() } 
-                                    className='bg-[#8652A4] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6'
+                                    className='bg-[#40b142] text-white mb-6 block w-full rounded-lg py-3 sm:py-3 md:py-5 lg:py-6'
                                 >
                                     { loading ? 'processing' : 'Sign up' }
                                 </button>
-                                <p className='text-[#8652a48f] text-sm block mt-4 mb-8'>Already have an account?   
-                                    <span className='text-[#8652A4] mx-2 font-bold'><Link to="/sign-in">Sign in</Link></span>
+                                <p className='text-[#40b1428f] text-sm block mt-4 mb-8'>Already have an account?   
+                                    <span className='text-[#40b142] mx-2 font-bold'><Link to="/sign-in">Sign in</Link></span>
                                 </p>
                             </div>
                         </div>

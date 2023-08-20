@@ -19,10 +19,10 @@ const AccountComp = () => {
             title: 'Security',
             isActive: false
         },
-        {
-            title: 'Activity log',
-            isActive: false
-        },
+        // {
+        //     title: 'Activity log',
+        //     isActive: false
+        // },
     ]
     const [steps, setSteps] = useState<any[]>(accountSettingSteps)
     const [step, setStep] = useState<number>(1);
@@ -62,10 +62,10 @@ const AccountComp = () => {
                                 step === 2 && 
                                 <AccountSecurity />
                             }
-                            {
+                            {/* {
                                 step === 3 && 
                                 <ActivityLog />
-                            }
+                            } */}
                         </div>
                     </div>
                 </div>
