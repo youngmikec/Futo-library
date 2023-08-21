@@ -14,6 +14,7 @@ export type User = {
     transactionPin: string;
     firstName: string;
     lastName: string;
+    fullName: string;
     dob: Date;
     photo: string;
     gender: 'MALE' | 'FEMALE';

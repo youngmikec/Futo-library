@@ -36,3 +36,7 @@ export const RESET_PASSWORD = async (data: {[key: string]: any}) => {
 export const SEND_PASSWORD_RESET_CODE = async (email: string = '') => {
     return axios.get(`${url}/users/resetCode/${email}`);
 };
+
+export const RETREIVE_ALL_USERS = async (query: string = '') => {
+    return axios.get(`${url}/users/allUsers/${query}`);
+};
