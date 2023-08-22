@@ -39,6 +39,7 @@ const AccountProfile = () => {
     const handleFileRead = async (e: any) => {
         const file = e.target.files[0];
         const base64 = await convertBase64(file);
+        console.log('photo', base64);
         updateProfile({photo: base64})
     }
 
@@ -68,8 +69,8 @@ const AccountProfile = () => {
             }
         }).catch(err => {
             setUpdating(false);
-            const { message } = err.response.data;
-            notify('error', message);
+            // const { message } = err.response.data;
+            notify('error', err);
         })
     }
 

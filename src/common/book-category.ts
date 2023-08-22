@@ -3,6 +3,7 @@ import { User } from "./user";
 
 export type BookCategory = {
     id: string;
+    _id: string;
     code: string;
     categoryName: string;
     books: Book[];

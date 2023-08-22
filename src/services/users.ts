@@ -18,7 +18,7 @@ export const RETRIEVE_PROFILE = async () => {
 };
 
 export const UPDATE_PROFILE = async (data: {[key: string]: any}) => {
-    return axios.put(`${url}/user/me/update`, data);
+    return axios.put(`${url}/users/me/update`, data);
 };
 
 export const VERIFY_RESET_CODE = async (data: {[key: string]: any}) => {
