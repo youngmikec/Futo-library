@@ -11,10 +11,10 @@ import { setItem } from '../../../utils';
 const AccountProfile = () => {
     const fileRef: any = useRef<HTMLButtonElement>(null)
     const [email, setEmail] = useState<string>('');
-    const [phone, setPhone] = useState<string>('');
-    const [photo, setphoto] = useState<string>('');
-    const [lastName, setLastName] = useState<string>('');
-    const [firstName, setFirstName] = useState<string>('');
+    const [phoneNumber, setPhoneNumber] = useState<string>('');
+    const [photo, setphoto] = useState<string>('http://res.cloudinary.com/dixjxrdrg/image/upload/v1692702861/chinos-images/wn032c6gqdca3oajlepr.jpg');
+    const [fullName, setFullName] = useState<string>('');
+    const [address, setAddress] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const [updating, setUpdating] = useState<boolean>(false);
 
@@ -75,19 +75,19 @@ const AccountProfile = () => {
 
     const handleUpdateProfile = () => {
         const data = {
-            phone,
+            phoneNumber,
             email,
-            firstName,
-            lastName,
+            fullName,
+            address
         };
         updateProfile(data);
     }
 
     const setProfile = (payload: any) => {
-        setFirstName(payload.firstName);
-        setLastName(payload.lastName);
+        setFullName(payload.fullName);
+        setAddress(payload.address);
         setEmail(payload.email);
-        setPhone(payload.phone);
+        setPhoneNumber(payload.phoneNumber);
         setphoto(payload.photo);
     }
 
@@ -145,26 +145,26 @@ const AccountProfile = () => {
                 <div className='mt-6 py-5 px-5'>
                     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:space-x-2">
                         <div className='my-4'>
-                            <label htmlFor="firstName" className='text-[#7F7F80] text-sm font-bold'>First Name</label>
+                            <label htmlFor="fullName" className='text-[#7F7F80] text-sm font-bold'>Full Name</label>
                             <div className='border-2 border-gray-100 rounded-xl mt-2'>
                                 <input 
                                     type="text" 
-                                    name="firstName" 
+                                    name="fullName" 
                                     className='w-full px-4 py-2'
-                                    value={firstName}
-                                    onChange={(e) => setFirstName(e.target.value)}
+                                    value={fullName}
+                                    onChange={(e) => setFullName(e.target.value)}
                                 />
                             </div>
                         </div>
                         <div className='my-4'>
-                            <label htmlFor="lastName" className='text-[#7F7F80] text-sm font-bold'>Last Name</label>
+                            <label htmlFor="address" className='text-[#7F7F80] text-sm font-bold'>Address</label>
                             <div className='border-2 border-gray-100 rounded-xl mt-2'>
                                 <input 
                                     type="text" 
-                                    name="lastName" 
+                                    name="address" 
                                     className='w-full px-4 py-2'
-                                    value={lastName}
-                                    onChange={(e) => setLastName(e.target.value)}
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -185,14 +185,14 @@ const AccountProfile = () => {
                         </div>
 
                         <div className='my-4'>
-                            <label htmlFor="phone" className='text-[#7F7F80] text-sm font-bold'>Phone Number</label>
+                            <label htmlFor="phoneNumber" className='text-[#7F7F80] text-sm font-bold'>Phone Number</label>
                             <div className='border-2 border-gray-100 rounded-xl mt-2'>
                                 <input 
                                     type="text" 
-                                    name="phone" 
+                                    name="phoneNumber" 
                                     className='w-full px-4 py-2'
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
+                                    value={phoneNumber}
+                                    onChange={(e) => setPhoneNumber(e.target.value)}
                                 />
                             </div>
                         </div>
