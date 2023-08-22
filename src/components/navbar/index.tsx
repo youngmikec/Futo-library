@@ -22,14 +22,14 @@ const Navbar = () => {
                 <div className='hidden sm:hidden md:flex lg:flex w-full py-4 justify-between'>
                     <div>
                         <Link to='/'>
-                            <img src={logo} alt="logo" width="120px" height="120px" />
+                            <img src={logoDark} alt="logo" width="50px" height="50px" />
                         </Link>
                     </div>
                     <div className='pt-3'>
                         <ul className='list-none inline-flex'>
-                            <li className='mx-4 text-white font-semibold hover:border-b-2 hover:border-b-white'><Link to="/">Home</Link></li>
-                            <li className='mx-4 text-white font-semibold hover:border-b-2 hover:border-b-white'>
-                                <div
+                            <li className='mx-4 text-black font-semibold hover:border-b-2 hover:border-[#40B142]'><Link to="/">Home</Link></li>
+                            <li className='mx-4 text-black font-semibold hover:border-b-2 hover:border-b-white'>
+                                {/* <div
                                     className="relative mx-1 pt-0 pb-2 group  mb-1 md:mb-0"
                                     id="button_pm">
                                     <Link to="/" className='inline-flex'>Services <IoMdArrowDropdown className='mt-1 mx-1' /></Link>
@@ -69,18 +69,18 @@ const Navbar = () => {
                                             </Link>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </li>
-                            <li className='mx-4 text-white font-semibold hover:border-b-2 hover:border-b-white'><Link to="/about-us">About Us</Link></li>
-                            <li className='mx-4 text-white font-semibold hover:border-b-2 hover:border-b-white'><Link to="/contact-us">Contact Us</Link></li>
-                            <li className='mx-4 text-white font-semibold hover:border-b-2 hover:border-b-white'><Link to="/faqs">Faqs</Link></li>
+                            <li className='mx-4 text-black font-semibold hover:border-b-2 hover:border-[#40B142]'><Link to="/about-us">About Us</Link></li>
+                            <li className='mx-4 text-black font-semibold hover:border-b-2 hover:border-[#40B142]'><Link to="/all-books">Books</Link></li>
+                            <li className='mx-4 text-black font-semibold hover:border-b-2 hover:border-[#40B142]'><Link to="/faqs">Faqs</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <ul className='list-none inline-flex'>
-                            <li className='mx-4 text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#FFAB2E]'><Link to="/sign-in">Sign In</Link></li>
-                            <li className='mx-4 text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#FFAB2E]'><Link to="/sign-up">Sign Up</Link></li>
+                            <li className='mx-4 text-black font-semibold py-3 px-4 rounded-lg hover:bg-[#40B142] hover:text-white'><Link to="/sign-in">Sign In</Link></li>
+                            <li className='mx-4 text-black font-semibold py-3 px-4 rounded-lg hover:bg-[#40B142] hover:text-white'><Link to="/sign-up">Sign Up</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ const Navbar = () => {
                                         dropdown-toggle
                                         px-6
                                         py-2.5
-                                        text-white hover:border-b-2 hove                     font-medium
+                                        text-black hover:border-b-2 hove                     font-medium
                                         font-lg
                                         leading-tight
                                         uppercase

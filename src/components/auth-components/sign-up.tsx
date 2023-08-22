@@ -139,14 +139,14 @@ const SignUpComp = () => {
 
     return (
         <>
-            <div className='auth-bg py-0 sm:py-8 md:py-8 lg:py-8'>
+            <div className='main-auth-bg py-0 sm:py-8 md:py-8 lg:py-8'>
                 <div className='fixed left-5 md:left-8 lg:left-8 top-6 md:top-8 lg:top-8'>
                     <div>
                         <Link to='/' className='hidden sm:hidden md:block lg:block'>
-                            <img src={logo} alt="logo" width="120px" height="120px" />
+                            <img src={logoBlack} alt="logo" width="50px" height="50px" />
                         </Link>
                         <Link to='/' className='block sm:block md:hidden lg:hidden'>
-                            <img src={logoBlack} alt="logo" width="120px" height="120px" />
+                            <img src={logoBlack} alt="logo" width="50px" height="50px" />
                         </Link>
                     </div>
                 </div>

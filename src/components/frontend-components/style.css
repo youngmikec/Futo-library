@@ -54,9 +54,9 @@
 }
 
 .about-bg {
-  background-image: url("../../assets/images/three-coporate.png");
+  background-image: url("../../assets/images/banner-img.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  /* background-size: contain; */
   background-position: center center;
   width: 100%;
   height: inherit;
@@ -86,7 +86,7 @@
 }
 .about-bg2 {
   background-blend-mode: color;
-  background-image: url("../../assets/images/laptop.png");
+  background-image: url("../../assets/images/banner-img.jpg");
   background-color: rgba(0, 0, 0, 0.705);
   background-repeat: no-repeat;
   background-size: cover;
