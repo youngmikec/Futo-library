@@ -10,6 +10,7 @@ import { GrFacebookOption, GrTwitter } from 'react-icons/gr';
 
 import './styles.css';
 import logo from '../../assets/images/logo-white.png';
+import logoDark from '../../assets/images/FUTO_logo.png';
 import { CREATE_SUBSCRIBER } from '../../services';
 import { AxiosResponse } from 'axios';
 import { ApiResponse } from '../../common';
@@ -56,9 +57,9 @@ const Footer = () => {
                         {/* column1 */}
                         <div>
                             <div className='mb-6'>
-                                <img src={logo} alt="logo" width="110px" height="110px" />
+                                <img src={logoDark} alt="logo" width="50px" height="50px" />
                             </div>
-                            <p className='text-justify text-white my-4 pr-8'>Fastest platform to trade all your digital asset . fast and reliable</p>
+                            <p className='text-justify text-white my-4 pr-8'>Get books in all courses, General books on different aspect of life (Finance, Lifestyle, etc.). We only give you the best</p>
                             <ul className='list-none'>
                                 <li className='inline-flex mx-3'>
                                     <a 
@@ -103,16 +104,13 @@ const Footer = () => {
                                     <Link to="/">Home</Link>
                                 </li>
                                 <li className='my-4 font-light'>
-                                    <Link to="/cryptos">Buy Crypto</Link>
+                                    <Link to="/cryptos">About us</Link>
                                 </li>
                                 <li className='my-4 font-light'>
-                                    <Link to="/cryptos">Sell Crypto</Link>
+                                    <Link to="/cryptos">Books</Link>
                                 </li>
                                 <li className='my-4 font-light'>
                                     <Link to="/faqs">FAQS</Link>
-                                </li>
-                                <li className='my-4 font-light'>
-                                    <Link to="/contact-us">Contact</Link>
                                 </li>
                             </ul>
                         </div>

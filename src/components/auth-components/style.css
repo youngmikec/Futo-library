@@ -1,8 +1,14 @@
-.auth-bg {
-  background-image: url("../../assets/svg/auth-bg.svg");
+.main-auth-bg {
+  /* background-image: url("../../assets/svg/auth-bg.svg");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat; */
+  background-blend-mode: color;
+  background-image: url("../../assets/images/banner-img.jpg");
+  background-color: rgba(0, 0, 0, 0.705);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   width: 100%;
   min-height: 100vh;
 }

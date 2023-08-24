@@ -35,8 +35,8 @@ const FaqComp = () => {
             <HeroSection>
                 <div className="w-full">
                     <div className='py-4 mt-8'>
-                        <h3 className='text-xl lg:text-5xl font-bold mb-1 mt-4 text-white text-center capitalize'>Hi, Do you have any question?</h3> *
-                        <p className='text-md font-thin text-center lg:w-3/4 mt-0 mx-auto text-white'>Get answers to any question or inquiry you might have</p>
+                        <h3 className='text-xl lg:text-5xl font-bold mb-1 mt-4 text-slate-800 text-center capitalize'>Hi, Do you have any question?</h3> *
+                        <p className='text-md font-thin text-center lg:w-3/4 mt-0 mx-auto text-slate-800'>Get answers to any question or inquiry you might have</p>
                         
                         <div className='flex justify-between rounded-md mx-auto border-none bg-white w-full md:w-7/12 lg:w-7/12 my-8'>
                             <input 
@@ -53,9 +53,6 @@ const FaqComp = () => {
                                 { searching ? 'Searching' : 'Search' }
                             </button>
 
-                        </div>
-                        <div className="image mx-auto justify-center flex">
-                            <img src={coin} alt=""  />
                         </div>
                         
                     </div>

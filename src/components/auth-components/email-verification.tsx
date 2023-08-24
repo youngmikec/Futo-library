@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AxiosResponse } from 'axios';
 
-import logo from '../../assets/images/logo-white.png';
+import logo from '../../assets/images/FUTO_logo.png';
 // import googleIcon from '../../assets/icons/google-icon.png';
 import { Link, useParams } from 'react-router-dom';
 import { VERIFY_EMAIL } from '../../services';
@@ -57,11 +57,11 @@ const EmailVerificationComp = () => {
 
     return (
         <>
-            <div className='auth-bg py-0 sm:py-8 md:py-8 lg:py-8'>
+            <div className='main-auth-bg py-0 sm:py-8 md:py-8 lg:py-8'>
                 <div className='fixed left-8 top-8'>
                     <div>
                         <Link to='/'>
-                            <img src={logo} alt="logo" width="120px" height="120px" />
+                            <img src={logo} alt="logo" width="50px" height="50px" />
                         </Link>
                     </div>
                 </div>
