@@ -3,6 +3,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import userProfileReducer from './user';
 import bookReducer from './book';
 import bookRequestReducer from './book-request';
+import studentReducer from './student';
+import staffReducer from './staff';
 import modalReducer from './modal';
 
 export const store = configureStore({
@@ -11,6 +13,8 @@ export const store = configureStore({
         booksState: bookReducer,
         bookRequestState: bookRequestReducer,
         appModal: modalReducer,
+        studentsState: studentReducer,
+        staffsState: staffReducer
     }
 })
 

@@ -40,8 +40,9 @@ export type User = {
     emailNotification: boolean;
     smsNotification: boolean;
     notifications: any[];
-      
+    createdAt: Date;
     createdBy: User;
+    updatedAt: Date;
     updatedBy: User;
     deleted: number;
     deletedAt: Date;

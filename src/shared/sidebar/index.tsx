@@ -56,13 +56,24 @@ const Sidebar = ({sidebarMenus}: Props) => {
                         </Link>
                     </li>
                     <li 
-                        className={`${ pathname === '/users' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
+                        className={`${ pathname === '/staff' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
                         title="Staff and Student users."
                     >
-                        <Link to="/users">
+                        <Link to="/staff">
                             <div className='flex justify-start'>
                                 <div><span><AiOutlineDollar className='text-xl'/></span></div>
-                                <div className='mx-2'>Users</div>
+                                <div className='mx-2'>Staff</div>
+                            </div>                
+                        </Link>
+                    </li>
+                    <li 
+                        className={`${ pathname === '/students' && 'bg-[#40b142] text-white' } my-6 py-3 px-4 text-center rounded-md hover:bg-[#40b142] hover:text-white` }
+                        title="Staff and Student users."
+                    >
+                        <Link to="/students">
+                            <div className='flex justify-start'>
+                                <div><span><AiOutlineDollar className='text-xl'/></span></div>
+                                <div className='mx-2'>Students</div>
                             </div>                
                         </Link>
                     </li>
