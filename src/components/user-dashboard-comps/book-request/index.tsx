@@ -183,17 +183,17 @@ const BookRequestsComp = () => {
                                         bookRequests.map((item: BookRequest) => {
                                             return <tr key={item.code}>
                                                 <td className='text-left border-spacing-y-4'>{item?.code}</td>
-                                                <td className="text-center py-3">{item?.bookName}</td>
-                                                <td className="text-center py-3">{ item?.borrowerName}</td>
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">{item?.bookName} [{ item?.borrowerId?.userType === 'ADMIN' ? 'Staff' : "Student"}]</td>
+                                                <td className="text-left py-3">{ item?.borrowerName}</td>
+                                                <td className="text-left py-3">
                                                     {
-                                                        item?.transactionStatus === 'ACTIVE' ? 
+                                                        item?.transactionStatus == 'ACTIVE' || "Active" ? 
                                                         <button className='bg-[#71DD37] text-white text-sm py-1 px-4 rounded-md'>{item.transactionStatus}</button>
                                                         :
                                                         <button className='bg-[#7F7F80] text-white text-sm py-1 px-4 rounded-md'>{item.transactionStatus}</button>
                                                     }
                                                 </td>
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">
                                                     {moment(item?.createdAt).format("MM-DD-YYYY")}
                                                 </td>
                                                 

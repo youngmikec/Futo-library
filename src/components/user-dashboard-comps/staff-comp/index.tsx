@@ -184,15 +184,15 @@ const StaffComp = () => {
                                         staff.map((item: User, idx: number) => {
                                             return <tr key={idx}>
                                                 <td className='text-left border-spacing-y-4'>{item?.employeeId}</td>
-                                                <td className="text-center py-3">{item?.fullName}</td>
-                                                <td className="text-center py-3">{ item?.email}</td>
-                                                <td className="text-center py-3">{ item?.phoneNumber}</td>
+                                                <td className="text-left py-3">{item?.fullName}</td>
+                                                <td className="text-left py-3">{ item?.email}</td>
+                                                <td className="text-left py-3">{ item?.phoneNumber}</td>
                                                 
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">
                                                     {moment(item?.dob).format("MM-DD-YYYY")}
                                                 </td>
                                                 
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">
                                                     <div
                                                     className="relative mx-1 px-1 py-2 group  mb-1 md:mb-0"
                                                     id="button_pm"
@@ -250,7 +250,7 @@ const StaffComp = () => {
                                             </tr>
                                         }) : 
                                             <tr>
-                                                <td colSpan={7} className="text-center py-3">No Staff available</td>
+                                                <td colSpan={7} className="text-left py-3">No Staff available</td>
                                             </tr>
                                     }
                                     

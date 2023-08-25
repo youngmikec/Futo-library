@@ -182,9 +182,9 @@ const BooksComp = () => {
                                         books.map((item: Book) => {
                                             return <tr key={item.code}>
                                                 <td className='text-left border-spacing-y-4'>{item?.code}</td>
-                                                <td className="text-center py-3">{item?.bookName}</td>
-                                                <td className="text-center py-3">{ item?.author}</td>
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">{item?.bookName}</td>
+                                                <td className="text-left py-3">{ item?.author}</td>
+                                                <td className="text-left py-3">
                                                     {
                                                         item.bookStatus === 'ACTIVE' ? 
                                                         <button className='bg-[#71DD37] text-white text-sm py-1 px-4 rounded-md'>{item.bookStatus}</button>
@@ -192,11 +192,11 @@ const BooksComp = () => {
                                                         <button className='bg-[#7F7F80] text-white text-sm py-1 px-4 rounded-md'>{item.bookStatus}</button>
                                                     }
                                                 </td>
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">
                                                     {moment(item?.createdAt).format("MM-DD-YYYY")}
                                                 </td>
                                                 
-                                                <td className="text-center py-3">
+                                                <td className="text-left py-3">
                                                     <div
                                                     className="relative mx-1 px-1 py-2 group  mb-1 md:mb-0"
                                                     id="button_pm"
@@ -254,7 +254,7 @@ const BooksComp = () => {
                                             </tr>
                                         }) : 
                                             <tr>
-                                                <td colSpan={7} className="text-center py-3">No Book available</td>
+                                                <td colSpan={7} className="text-left py-3">No Book available</td>
                                             </tr>
                                     }
                                     
