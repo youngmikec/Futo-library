@@ -69,17 +69,17 @@ const DashboardComp = () => {
         <>
             <div>    
                 {/* FIRST SECTION STARTS HERE */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
+                {/* <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
                     <div>
                         <DashboardCard image={image} />
                     </div>
 
-                    {/* <div className='shadow-sm bg-white lg:h-52'></div>
+                    <div className='shadow-sm bg-white lg:h-52'></div>
 
                     <div className=''>
                         <img src={image} alt=""  className=' bg-[#FFAB2E] lg:h-52' id='bg'/>
-                    </div> */}
-                </div>
+                    </div>
+                </div> */}
 
                 {/* service card */}
                 <section>
@@ -90,15 +90,15 @@ const DashboardComp = () => {
                         <div className='grid grid-cols-1 space-y-2
                             sm:grid-cols-2  sm:space-x-2 sm:space-y-3
                             md:grid-cols-2  md:space-x-2 md:space-y-3
-                            lg:grid-cols-4  lg:space-x-2 lg:space-y-0
+                            lg:grid-cols-2  lg:space-x-2 lg:space-y-0
                             ' 
                         >
                             <div>
                                 <ServiceCard
                                     title="Books Shelve"
                                     subTitle='Book acquistion just got easy.'
-                                    link='/airtime'
-                                    linkText='Convert'
+                                    link='/books'
+                                    linkText='View Books'
                                     img={airtime}
                                 />
                             </div>
@@ -107,15 +107,15 @@ const DashboardComp = () => {
                                 <ServiceCard
                                     title="Book Requests"
                                     subTitle='Metrics of incoming and outgoing books'
-                                    link='/sell-crypto'
-                                    linkText='Sell'
+                                    link='/book-requests'
+                                    linkText='Request for Book'
                                     img={sell}
                                 />
 
                             </div>
 
 
-                            <div>
+                            {/* <div>
                                 <ServiceCard
                                     title="Trade Giftcard"
                                     subTitle='Redeem your giftcard with us'
@@ -134,7 +134,7 @@ const DashboardComp = () => {
                                     linkText='Buy'
                                     img={crypto}
                                 />
-                            </div>   
+                            </div>    */}
                                                       
 
 
