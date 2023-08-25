@@ -23,6 +23,7 @@ import { INITIALIZE_BOOKS, REMOVE_BOOk } from '../../../store/book';
 // import BookUpdateForm from './book-update-form';
 import StudentDetailComp from './student-detail';
 import { INITIALIZE_STUDENT } from '../../../store/student';
+import StudentForm from './student-form';
 
 const StudentComp = () => {
     const dispatch = useDispatch();
@@ -124,8 +125,8 @@ const StudentComp = () => {
                     <div id="title">
                         <div className="flex flex-col sm:justify-between md:justify-between lg:flex-row lg:justify-between w-full">
                             <div className='mb-8'>
-                                <h3 className='text-[#40b142] text-xl font-bold mb-1'>Staff Records Table</h3>
-                                <p className='text-[#7F7F80] text-sm'>Displaying {students.length} of {students.length} Giftcard Record(s)</p>
+                                <h3 className='text-[#40b142] text-xl font-bold mb-1'>Student Records Table</h3>
+                                <p className='text-[#7F7F80] text-sm'>Displaying {students.length} of {students.length} Student Record(s)</p>
                             </div>
 
                             <div className='mb-8'>
@@ -263,9 +264,9 @@ const StudentComp = () => {
             </div>
 
             <AppModalComp title=''>
-                {/* {
-                    modalMode === 'create' && <BookForm />
-                } */}
+                {
+                    modalMode === 'create' && <StudentForm />
+                }
                 {
                     modalMode === 'view' && <StudentDetailComp student={selectedStudent} />
                 }

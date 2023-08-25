@@ -18,7 +18,11 @@ export const RETRIEVE_PROFILE = async () => {
 };
 
 export const UPDATE_PROFILE = async (data: {[key: string]: any}) => {
-    return axios.put(`${url}/users/me/update`, data);
+    const instance = axios.create({
+        maxContentLength: 3000000, // Example value for maximum content length
+        timeout: 60000,
+    })
+    return instance.put(`${url}/users/me/update`, data);
 };
 
 export const VERIFY_RESET_CODE = async (data: {[key: string]: any}) => {
@@ -26,7 +30,11 @@ export const VERIFY_RESET_CODE = async (data: {[key: string]: any}) => {
 };
 
 export const SIGN_UP_USER = async (data: {[key: string]: any}) => {
-    return axios.post(`${url}/users/register`, data);
+    const instance = axios.create({
+        maxContentLength: 3000000, // Example value for maximum content length
+        timeout: 60000,
+    })
+    return instance.post(`${url}/auth/register`, data);
 };
 
 export const RESET_PASSWORD = async (data: {[key: string]: any}) => {

@@ -8,16 +8,17 @@ import './style.css';
 import { ApiResponse } from '../../../common';
 import { SIGN_UP_USER } from '../../../services';
 import { ADD_TO_STAFF } from '../../../store/staff';
+import { ADD_TO_STUDENT } from '../../../store/student';
 
 
-const StaffForm = () => {
+const StudentForm = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState<boolean>(false);
 
     const [photo, setPhoto] = useState<{value: string, error: boolean }>({value: '', error: false});
     const [userType, setUserType] = useState<{value: string, error: boolean }>({value: '', error: false});
     const [fullName, setFullName] = useState<{value: string, error: boolean }>({value: '', error: false});
-    const [employeeId, setEmployeeId] = useState<{value: string, error: boolean }>({value: '', error: false});
+    const [regNumber, setRegNumber] = useState<{value: string, error: boolean }>({value: '', error: false});
     const [age, setAge] = useState<{value: number, error: boolean }>({value: 25, error: false});
     const [dob, setDob] = useState<{value: string, error: boolean }>({value: '', error: false});
     const [gender, setGender] = useState<{value: string, error: boolean }>({value: '', error: false});
@@ -75,11 +76,11 @@ const StaffForm = () => {
           setFullName({ ...fullName, error: false });
         }
         
-        if (employeeId.value === "" || undefined || null) {
+        if (regNumber.value === "" || undefined || null) {
           isValid = false;
-          setEmployeeId({ ...employeeId, error: true });
+          setRegNumber({ ...regNumber, error: true });
         } else {
-          setEmployeeId({ ...employeeId, error: false });
+          setRegNumber({ ...regNumber, error: false });
         }
 
         if (age.value === 0 || undefined || null) {
@@ -139,7 +140,7 @@ const StaffForm = () => {
         setPhoneNumber({value: '', error: false});
         setEmail({value: '', error: false});
         setGender({value: '', error: false});
-        setEmployeeId({value: '', error: false});
+        setRegNumber({value: '', error: false});
         setPassword({value: '', error: false});
     }
 
@@ -147,9 +148,9 @@ const StaffForm = () => {
         if (inputCheck()) {
             setLoading(true);
             let data = { 
-                userType: "ADMIN",
+                userType: "STUDENT",
                 fullName: fullName.value,
-                employeeId: employeeId.value,
+                regNumber: regNumber.value,
                 age: age.value,
                 dob: dob.value,
                 gender: gender.value,
@@ -157,7 +158,6 @@ const StaffForm = () => {
                 phoneNumber: phoneNumber.value,
                 email: email.value,
                 password: password.value,
-                photo: ''
             };
             let payload;
             if(photo.value !== ''){
@@ -171,7 +171,7 @@ const StaffForm = () => {
                 const { message, payload } = res.data;
                 setLoading(false);
                 notify("success", message);
-                dispatch(ADD_TO_STAFF(payload));
+                dispatch(ADD_TO_STUDENT(payload));
                 clearFormStates();
             })
             .catch((err: any) => {
@@ -191,7 +191,7 @@ const StaffForm = () => {
                 <div>
                     <div className="my-3">
                         <label htmlFor="shortName" className="text-[#BFBFBF] text-sm block">
-                            Staff Profile Image
+                            Student Profile Image
                         </label>
                         <div
                             className={`border-2 rounded-md my-3 h-60 w-full flex justify-center ${
@@ -221,7 +221,7 @@ const StaffForm = () => {
 
                         <div className="my-3">
                             <label htmlFor="fullName" className="text-[#BFBFBF] text-sm block">
-                                Staff Full Name*
+                                Student Full Name*
                             </label>
                             <input
                                 type="text"
@@ -289,18 +289,18 @@ const StaffForm = () => {
                         </div>
 
                         <div className="my-3">
-                            <label htmlFor="employeeId" className="text-[#BFBFBF] text-sm block">
-                                Employee Id*
+                            <label htmlFor="regNumber" className="text-[#BFBFBF] text-sm block">
+                                Student Reg Number*
                             </label>
                             <input
                                 type="text"
-                                name="employeeId"
-                                value={employeeId.value}
+                                name="regNumber"
+                                value={regNumber.value}
                                 onChange={(e) =>
-                                    setEmployeeId({ ...employeeId, value: e.target.value })
+                                    setRegNumber({ ...regNumber, value: e.target.value })
                                 }
                                 className={`bg-white text-[#6A6A6A] border-2 ${
-                                    employeeId.error ? 'error-border' : 'input-border'
+                                    regNumber.error ? 'error-border' : 'input-border'
                                 } rounded-md px-4 py-2 w-full`}
                             />
                         </div>
@@ -380,7 +380,7 @@ const StaffForm = () => {
                                 onClick={() => handleSubmit()}
                                 className="bg-[#40b142] text-white py-1 px-10 rounded-2xl"
                             >
-                                {loading ? "Processing..." : "Create Staff"}
+                                {loading ? "Processing..." : "Create Student"}
                             </button>
                         </div>
                     </div>
@@ -392,4 +392,4 @@ const StaffForm = () => {
     )
 }
 
-export default StaffForm;
+export default StudentForm;
